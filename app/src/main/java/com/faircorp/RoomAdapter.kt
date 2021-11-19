@@ -8,9 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 class RoomAdapter(val listener: OnRoomSelectedListener) : RecyclerView.Adapter<RoomAdapter.RoomViewHolder>() { // (1)
 
     inner class RoomViewHolder(view: View) : RecyclerView.ViewHolder(view) { // (2)
-        val name: TextView = view.findViewById(R.id.txt_room_name2)
-
-        val building: TextView = view.findViewById(R.id.txt_building)
+        val name: TextView = view.findViewById(R.id.room_name)
+        val currentemperature: TextView = view.findViewById((R.id.room_current_temperature))
+        val building: TextView = view.findViewById(R.id.room_building_name)
     }
 
     private val items = mutableListOf<RoomDto>() // (3)
@@ -34,8 +34,8 @@ class RoomAdapter(val listener: OnRoomSelectedListener) : RecyclerView.Adapter<R
         val room = items[position]
         holder.apply {
             name.text = room.name
-            status.text = room.roomStatus.toString()
-            room.text = room.roomName
+            currentemperature.text = room.currentTemperature.toString()
+            building.text = room.buildingName
             itemView.setOnClickListener { listener.onRoomSelected(room.id) } // (1)
         }
     }

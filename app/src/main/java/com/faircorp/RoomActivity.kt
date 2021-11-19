@@ -25,11 +25,13 @@ class RoomActivity : BasicActivity() {
             runCatching { ApiServices().roomsApiService.findById(id).execute() } // (2)
                 .onSuccess {
                     val iname:String? = it.body()?.name
-                    val iRoomName:String? = it.body()?.roomName
-                    val iPower:String? = it.body()?.power.toString()
-                    val iStatus: String? = it.body()?.status.toString()
+                    val iRoomName:String? = it.body()?.currentTemperature.toString()
+                    val iTargetTemperature:String?=it.body()?.targetTemperature.toString()
+                    val iPower:String? = it.body()?.floor.toString()
+                    val iStatus: String? = it.body()?.buildingName
                     listArg.add(iname)
                     listArg.add(iRoomName)
+                    listArg.add(iTargetTemperature)
                     listArg.add(iStatus)
                     listArg.add(iPower)
                     withContext(context = Dispatchers.Main) { // (3)
@@ -50,10 +52,11 @@ class RoomActivity : BasicActivity() {
                     }
                 }
             withContext(context = Dispatchers.Main) {
-                findViewById<TextView>(R.id.txt_Room_name).text = listArg.get(0)
-                findViewById<TextView>(R.id.txt_Room_room_name).text = listArg.get(1)
-                findViewById<TextView>(R.id.txt_Room_status).text = listArg.get(2)
-                findViewById<TextView>(R.id.txt_power).text = listArg.get(3)
+                findViewById<TextView>(R.id.text_room).text = listArg.get(0)
+                findViewById<TextView>(R.id.text_current_temp).text = listArg.get(1)
+                findViewById<TextView>(R.id.text_target_temp).text = listArg.get(2)
+                findViewById<TextView>(R.id.text_floor).text = listArg.get(3)
+                findViewById<TextView>(R.id.text_room_building).text = listArg.get(4)
             }
         }
     }

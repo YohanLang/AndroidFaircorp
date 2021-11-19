@@ -18,4 +18,10 @@
     <item
         android:id="@+id/menu_heaters"
         android:title="@string/building_heaters" />
+    <item
+        android:id="@+id/menu_rooms"
+        android:title="Building Rooms" />
+    <item
+        android:id="@+id/menu_buildings"
+        android:title="Buildings" />
 </menu>

@@ -1,4 +1,6 @@
 package com.faircorp
 
-class BuildingDto {
-}
+class BuildingDto (
+    val id :Long,
+    val name : String
+)
