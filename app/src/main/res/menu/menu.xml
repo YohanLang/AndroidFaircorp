@@ -32,4 +32,7 @@
     <item
         android:id="@+id/menu_buildings"
         android:title="Buildings" />
+    <item
+        android:id="@+id/menu_create_building"
+        android:title="Create Building" />
 </menu>

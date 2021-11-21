@@ -58,7 +58,7 @@ class HeaterActivity : BasicActivity() {
         }
     }
 
-    fun switch(view : View) {
+    fun switch(view: View) {
         val id = intent.getLongExtra(Heater_NAME_PARAM2, 0)
 
         lifecycleScope.launch(Dispatchers.Default) { // (1)
@@ -84,7 +84,8 @@ class HeaterActivity : BasicActivity() {
         }
 
     }
-    fun delete(view : View) {
+
+    fun delete(view: View) {
         val id = intent.getLongExtra(Heater_NAME_PARAM2, 0)
 
         lifecycleScope.launch(Dispatchers.Default) { // (1)

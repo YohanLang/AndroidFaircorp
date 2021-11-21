@@ -1,10 +1,7 @@
 package com.faircorp
 
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.PUT
-import retrofit2.http.Path
+import retrofit2.http.*
 
 interface BuildingApiService {
     @GET("buildings")
@@ -16,4 +13,12 @@ interface BuildingApiService {
     @PUT("buildings/{id}")
     fun updateBuilding(@Path("id") id: Long, @Body building: BuildingDto): Call<BuildingDto>
 
+    @POST("buildings/create")
+    fun create(@Body building: BuildingDto): Call<BuildingDto>
+
+    @GET("buildings/{id}/rooms")
+    fun findRoomByBuilding(@Path("id") id: Long): Call<List<RoomDto>>
+
+    @DELETE("buildings/{id}/delete")
+    fun delete(@Path("id") id: Long): Call<Void>
 }

@@ -55,7 +55,8 @@ class WindowActivity : BasicActivity() {
             }
         }
     }
-    fun switch(view : View) {
+
+    fun switch(view: View) {
         val id = intent.getLongExtra(WINDOW_NAME_PARAM2, 0)
 
         lifecycleScope.launch(Dispatchers.Default) { // (1)
@@ -81,7 +82,8 @@ class WindowActivity : BasicActivity() {
         }
 
     }
-    fun delete(view : View) {
+
+    fun delete(view: View) {
         val id = intent.getLongExtra(WINDOW_NAME_PARAM2, 0)
 
         lifecycleScope.launch(Dispatchers.Default) { // (1)

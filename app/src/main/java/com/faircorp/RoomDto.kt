@@ -8,4 +8,4 @@ data class RoomDto(
     val floor: Double?,
     val buildingId: Long,
 
-)
+    )

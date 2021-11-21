@@ -8,6 +8,8 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 
+const val Room_config_id3 = "com.faircorp.roomconfigid.attribute"
+
 open class BasicActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -44,6 +46,9 @@ open class BasicActivity : AppCompatActivity() {
             )
             R.id.menu_create_heater -> startActivity(
                 Intent(this, HeatersCreateActivity::class.java)
+            )
+            R.id.menu_create_building -> startActivity(
+                Intent(this, BuildingsCreateActivity::class.java)
             )
 
         }

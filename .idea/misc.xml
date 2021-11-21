@@ -14,8 +14,9 @@
         <entry key="..\:/Users/user/Desktop/Cours 2A/Majeur/Web/AppFaircorp/app/src/main/res/layout/fragment_second.xml" value="0.1" />
         <entry key="..\:/Users/user/Desktop/Cours 2A/Majeur/Web/AppFaircorp/app/src/main/res/menu/menu.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/user/Desktop/Cours 2A/Majeur/Web/Rendu/AppFaircorp/app/src/main/res/layout/acitivity_building.xml" value="0.1" />
-        <entry key="..\:/Users/user/Desktop/Cours 2A/Majeur/Web/Rendu/AppFaircorp/app/src/main/res/layout/acitivity_heater_create.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/user/Desktop/Cours 2A/Majeur/Web/Rendu/AppFaircorp/app/src/main/res/layout/acitivity_heater_create.xml" value="0.1" />
         <entry key="..\:/Users/user/Desktop/Cours 2A/Majeur/Web/Rendu/AppFaircorp/app/src/main/res/layout/activity_building.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/user/Desktop/Cours 2A/Majeur/Web/Rendu/AppFaircorp/app/src/main/res/layout/activity_building_create.xml" value="0.22" />
         <entry key="..\:/Users/user/Desktop/Cours 2A/Majeur/Web/Rendu/AppFaircorp/app/src/main/res/layout/activity_buildings.xml" value="0.1" />
         <entry key="..\:/Users/user/Desktop/Cours 2A/Majeur/Web/Rendu/AppFaircorp/app/src/main/res/layout/activity_buildings_item.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/user/Desktop/Cours 2A/Majeur/Web/Rendu/AppFaircorp/app/src/main/res/layout/activity_buildingwindow.xml" value="0.1" />
@@ -23,6 +24,7 @@
         <entry key="..\:/Users/user/Desktop/Cours 2A/Majeur/Web/Rendu/AppFaircorp/app/src/main/res/layout/activity_heater.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/user/Desktop/Cours 2A/Majeur/Web/Rendu/AppFaircorp/app/src/main/res/layout/activity_heaters.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/user/Desktop/Cours 2A/Majeur/Web/Rendu/AppFaircorp/app/src/main/res/layout/activity_heaters_item.xml" value="0.22" />
+        <entry key="..\:/Users/user/Desktop/Cours 2A/Majeur/Web/Rendu/AppFaircorp/app/src/main/res/layout/activity_main.xml" value="0.15715579710144928" />
         <entry key="..\:/Users/user/Desktop/Cours 2A/Majeur/Web/Rendu/AppFaircorp/app/src/main/res/layout/activity_menu.xml" value="0.22" />
         <entry key="..\:/Users/user/Desktop/Cours 2A/Majeur/Web/Rendu/AppFaircorp/app/src/main/res/layout/activity_room.xml" value="0.22" />
         <entry key="..\:/Users/user/Desktop/Cours 2A/Majeur/Web/Rendu/AppFaircorp/app/src/main/res/layout/activity_rooms.xml" value="0.14666666666666667" />
@@ -30,7 +32,7 @@
         <entry key="..\:/Users/user/Desktop/Cours 2A/Majeur/Web/Rendu/AppFaircorp/app/src/main/res/layout/activity_rooms_item.xml" value="0.22" />
         <entry key="..\:/Users/user/Desktop/Cours 2A/Majeur/Web/Rendu/AppFaircorp/app/src/main/res/layout/activity_window.xml" value="0.22" />
         <entry key="..\:/Users/user/Desktop/Cours 2A/Majeur/Web/Rendu/AppFaircorp/app/src/main/res/layout/activity_windows.xml" value="0.22" />
-        <entry key="..\:/Users/user/Desktop/Cours 2A/Majeur/Web/Rendu/AppFaircorp/app/src/main/res/layout/activity_windows_create.xml" value="0.22" />
+        <entry key="..\:/Users/user/Desktop/Cours 2A/Majeur/Web/Rendu/AppFaircorp/app/src/main/res/layout/activity_windows_create.xml" value="0.21428571428571427" />
         <entry key="..\:/Users/user/Desktop/Cours 2A/Majeur/Web/Rendu/AppFaircorp/app/src/main/res/layout/activity_windows_create_item.xml" value="0.15715579710144928" />
         <entry key="..\:/Users/user/Desktop/Cours 2A/Majeur/Web/Rendu/AppFaircorp/app/src/main/res/layout/activity_windows_item.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/user/Desktop/Cours 2A/Majeur/Web/Rendu/AppFaircorp/app/src/main/res/layout/content_menu.xml" value="0.14666666666666667" />

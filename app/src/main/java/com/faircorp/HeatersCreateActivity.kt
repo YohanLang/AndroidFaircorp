@@ -1,4 +1,5 @@
 package com.faircorp
+
 import android.os.Bundle
 import android.view.View
 import android.widget.*
@@ -6,6 +7,7 @@ import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+
 class HeatersCreateActivity : BasicActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,9 +22,9 @@ class HeatersCreateActivity : BasicActivity() {
             runCatching { ApiServices().roomsApiService.findAll().execute() } // (2)
                 .onSuccess {
                     withContext(context = Dispatchers.Main) { // (3)
-                        for (i in 0..(it.body()?.size!!-1)) {
-                            val dispId:Long? = it.body()?.get(i)?.id
-                            val dispName:String? = it.body()?.get(i)?.name
+                        for (i in 0..(it.body()?.size!! - 1)) {
+                            val dispId: Long? = it.body()?.get(i)?.id
+                            val dispName: String? = it.body()?.get(i)?.name
                             arrayId.add(dispId)
                             arrayName.add(dispName)
                         }
@@ -42,55 +44,71 @@ class HeatersCreateActivity : BasicActivity() {
                 val spinner = findViewById<Spinner>(R.id.spinnerheater)
                 val spinner2 = findViewById<Spinner>(R.id.spinnerheater2)
                 if (spinner != null) {
-                    val adapter = ArrayAdapter(applicationContext,
-                        android.R.layout.simple_spinner_item, arrayName)
+                    val adapter = ArrayAdapter(
+                        applicationContext,
+                        android.R.layout.simple_spinner_item, arrayName
+                    )
                     spinner.adapter = adapter
 
                     spinner.onItemSelectedListener = object :
                         AdapterView.OnItemSelectedListener {
-                        override fun onItemSelected(parent: AdapterView<*>,
-                                                    view: View, position: Int, id: Long) {
+                        override fun onItemSelected(
+                            parent: AdapterView<*>,
+                            view: View, position: Int, id: Long
+                        ) {
 
-                            findViewById<TextView>(R.id.edit_heater_room_id).text = arrayId[position].toString()
+                            findViewById<TextView>(R.id.edit_heater_room_id).text =
+                                arrayId[position].toString()
 
-                            Toast.makeText(applicationContext,
+                            Toast.makeText(
+                                applicationContext,
                                 getString(R.string.selected_item) + " " +
-                                        "" + arrayId[position], Toast.LENGTH_SHORT).show()
+                                        "" + arrayId[position], Toast.LENGTH_SHORT
+                            ).show()
                         }
 
                         override fun onNothingSelected(parent: AdapterView<*>) {
                             TODO("Not anything selected")
 
-                        }                        }
+                        }
+                    }
                 }
                 if (spinner2 != null) {
-                    val adapter = ArrayAdapter(applicationContext,
-                        android.R.layout.simple_spinner_item, arrayStatus)
+                    val adapter = ArrayAdapter(
+                        applicationContext,
+                        android.R.layout.simple_spinner_item, arrayStatus
+                    )
                     spinner2.adapter = adapter
 
                     spinner2.onItemSelectedListener = object :
                         AdapterView.OnItemSelectedListener {
-                        override fun onItemSelected(parent: AdapterView<*>,
-                                                    view: View, position: Int, id: Long) {
+                        override fun onItemSelected(
+                            parent: AdapterView<*>,
+                            view: View, position: Int, id: Long
+                        ) {
 
-                            findViewById<TextView>(R.id.edit_heater_status).text = arrayStatus[position].toString()
+                            findViewById<TextView>(R.id.edit_heater_status).text =
+                                arrayStatus[position].toString()
 
-                            Toast.makeText(applicationContext,
+                            Toast.makeText(
+                                applicationContext,
                                 getString(R.string.selected_item) + " " +
-                                        "" + arrayStatus[position].toString(), Toast.LENGTH_SHORT).show()
+                                        "" + arrayStatus[position].toString(), Toast.LENGTH_SHORT
+                            ).show()
                         }
 
                         override fun onNothingSelected(parent: AdapterView<*>) {
                             TODO("Not anything selected")
 
-                        }                        }
+                        }
+                    }
                 }
             }
         }
     }
 
 
-    fun create(view: View){
+    fun create(view: View) {
         val heaterName = findViewById<EditText>(R.id.edit_heater_name).text.toString()
         val heaterStatus = findViewById<TextView>(R.id.edit_heater_status).text.toString()
         val heaterRoomId = findViewById<TextView>(R.id.edit_heater_room_id).text.toString().toLong()
@@ -98,9 +116,12 @@ class HeatersCreateActivity : BasicActivity() {
 
         when (heaterStatus) {
             "ON" -> {
-                var heaterDto = HeaterDto(null, heaterName, heaterPower, null ,heaterRoomId, HeaterStatus.ON)
+                var heaterDto =
+                    HeaterDto(null, heaterName, heaterPower, null, heaterRoomId, HeaterStatus.ON)
                 lifecycleScope.launch(context = Dispatchers.IO) { // (1)
-                    runCatching { ApiServices().heatersApiService.create(heaterDto).execute() } // (2)
+                    runCatching {
+                        ApiServices().heatersApiService.create(heaterDto).execute()
+                    } // (2)
                         .onSuccess {
                             withContext(context = Dispatchers.Main) { // (3)
                                 Toast.makeText(
@@ -123,9 +144,12 @@ class HeatersCreateActivity : BasicActivity() {
                 }
             }
             "OFF" -> {
-                var heaterDto = HeaterDto(null, heaterName, null,null, heaterRoomId,HeaterStatus.OFF)
+                var heaterDto =
+                    HeaterDto(null, heaterName, null, null, heaterRoomId, HeaterStatus.OFF)
                 lifecycleScope.launch(context = Dispatchers.IO) { // (1)
-                    runCatching { ApiServices().heatersApiService.create(heaterDto).execute() } // (2)
+                    runCatching {
+                        ApiServices().heatersApiService.create(heaterDto).execute()
+                    } // (2)
                         .onSuccess {
                             withContext(context = Dispatchers.Main) { // (3)
                                 Toast.makeText(

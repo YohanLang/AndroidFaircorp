@@ -7,5 +7,5 @@ data class WindowDto(
     val name: String,
     val roomName: String?,
     val roomId: Long,
-    val windowStatus:Status
+    val windowStatus: Status
 )

@@ -26,4 +26,42 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="building_windows">Building windows</string>
     <string name="building_heaters">Building Heaters</string>
+
+
+    <string name="outside_temperature">Outside Temperature</string>
+
+    <string name="find_rooms">Find Rooms</string>
+    <string name="heater_name">Heater Name</string>
+    <string name="create_heater">Create heater</string>
+    <string name="heater_status">Heater status</string>
+
+    <string name="heater_name2">Heater name</string>
+
+    <string name="building_name">Building name</string>
+    <string name="create_building">Create building</string>
+    <string name="outsidetemperature">OutsideTemperature</string>
+
+    <string name="status">Status</string>
+
+    <string name="power">Power</string>
+    <string name="delete">Delete</string>
+
+
+    <string name="floor">Floor</string>
+    <string name="building_id">Building ID</string>
+    <string name="room_name">Room name</string>
+    <string name="create_room">Create room</string>
+
+
+    <string name="selected_building_id">Selected building id</string>
+    <string name="room_id">Room ID</string>
+    <string name="create_window">Create window</string>
+
+    <string name="selected_id">Selected id</string>
+    <string name="_0">0</string>
+    <string name="text_view">Text View</string>
+    <string name="textview">TextView</string>
+    <string name="text_view2">Text View</string>
+
+
 </resources>

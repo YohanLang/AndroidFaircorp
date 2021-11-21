@@ -59,6 +59,10 @@
             android:name=".HeatersCreateActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".BuildingsCreateActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
 
 
         <activity

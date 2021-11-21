@@ -14,11 +14,11 @@ interface HeaterApiService {
     fun updateHeater(@Path("id") id: Long, @Body heater: HeaterDto): Call<HeaterDto>
 
     @PUT("heaters/{id}/switch")
-    fun switch(@Path("id") id: Long ): Call<HeaterDto>
+    fun switch(@Path("id") id: Long): Call<HeaterDto>
 
     @POST("heaters/create")
-    fun create( @Body heater:HeaterDto): Call<HeaterDto>
+    fun create(@Body heater: HeaterDto): Call<HeaterDto>
 
     @DELETE("heaters/{id}/delete")
-    fun delete(@Path("id") id : Long): Call<Void>
+    fun delete(@Path("id") id: Long): Call<Void>
 }
