@@ -1,4 +1,3 @@
-
 package com.faircorp
 
 
@@ -18,16 +17,16 @@ class BuildingActivity : BasicActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_building)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        val id = intent.getLongExtra(Building_NAME_PARAM2,0)
+        val id = intent.getLongExtra(Building_NAME_PARAM2, 0)
         val listArg: MutableList<String?> = mutableListOf()
 
         lifecycleScope.launch(Dispatchers.Default) { // (1)
             runCatching { ApiServices().buildingsApiService.findById(id).execute() } // (2)
                 .onSuccess {
-                    val iname:String? = it.body()?.name
-
+                    val iname: String? = it.body()?.name
+                    val iout: String? = it.body()?.outsideTemperature.toString()
                     listArg.add(iname)
-
+                    listArg.add(iout)
 
                 }
                 .onFailure {
@@ -41,12 +40,10 @@ class BuildingActivity : BasicActivity() {
                 }
             withContext(context = Dispatchers.Main) {
                 findViewById<TextView>(R.id.text_building).text = listArg.get(0)
-
+                findViewById<TextView>(R.id.text_out).text = listArg.get(1)
             }
         }
     }
-
-
 
 
 }

@@ -1,7 +1,6 @@
 package com.faircorp
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
@@ -12,8 +11,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class WindowsActivity  : BasicActivity(), OnWindowSelectedListener {
-
+class WindowsActivity : BasicActivity(), OnWindowSelectedListener {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,7 +46,7 @@ class WindowsActivity  : BasicActivity(), OnWindowSelectedListener {
         }
     }
 
-    override fun onWindowSelected(id: Long) {
+    override fun onWindowSelected(id: Long?) {
 
         val intent = Intent(this, WindowActivity::class.java).putExtra(WINDOW_NAME_PARAM2, id)
         startActivity(intent)

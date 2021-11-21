@@ -9,8 +9,11 @@ import retrofit2.http.Path
 interface BuildingApiService {
     @GET("buildings")
     fun findAll(): Call<List<BuildingDto>>
+
     @GET("buildings/{id}")
     fun findById(@Path("id") id: Long): Call<BuildingDto>
+
     @PUT("buildings/{id}")
     fun updateBuilding(@Path("id") id: Long, @Body building: BuildingDto): Call<BuildingDto>
+
 }

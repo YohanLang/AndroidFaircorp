@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+
 //import android.widget.Toast
 const val MAIN_NAME_PARAM = "com.faircorp.windowname.attribute"
 
@@ -22,5 +23,6 @@ class MainActivity : BasicActivity() {
         val intent = Intent(this, WindowActivity::class.java).apply {
             putExtra(MAIN_NAME_PARAM, windowName)
         }
-        startActivity(intent)}
+        startActivity(intent)
+    }
 }

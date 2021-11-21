@@ -1,8 +1,8 @@
-
 package com.faircorp
 
 
 import android.os.Bundle
+import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
@@ -18,15 +18,15 @@ class HeaterActivity : BasicActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_heater)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        val id = intent.getLongExtra(Heater_NAME_PARAM2,0)
+        val id = intent.getLongExtra(Heater_NAME_PARAM2, 0)
         val listArg: MutableList<String?> = mutableListOf()
 
         lifecycleScope.launch(Dispatchers.Default) { // (1)
             runCatching { ApiServices().heatersApiService.findById(id).execute() } // (2)
                 .onSuccess {
-                    val iname:String? = it.body()?.name
-                    val iRoomName:String? = it.body()?.roomName
-                    val iPower:String? = it.body()?.power.toString()
+                    val iname: String? = it.body()?.name
+                    val iRoomName: String? = it.body()?.roomName
+                    val iPower: String? = it.body()?.power.toString()
                     val iStatus: String? = it.body()?.status.toString()
                     listArg.add(iname)
                     listArg.add(iRoomName)
@@ -58,7 +58,55 @@ class HeaterActivity : BasicActivity() {
         }
     }
 
+    fun switch(view : View) {
+        val id = intent.getLongExtra(Heater_NAME_PARAM2, 0)
 
+        lifecycleScope.launch(Dispatchers.Default) { // (1)
+            runCatching { ApiServices().heatersApiService.switch(id).execute() } // (2)
+                .onSuccess {
+                    withContext(context = Dispatchers.Main) { // (3)
+                        Toast.makeText(
+                            applicationContext,
+                            "Success  switch",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
+                }
+                .onFailure {
+                    withContext(context = Dispatchers.Main) { // (3)
+                        Toast.makeText(
+                            applicationContext,
+                            "id $id Error on windows switching $it",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
+                }
+        }
 
+    }
+    fun delete(view : View) {
+        val id = intent.getLongExtra(Heater_NAME_PARAM2, 0)
 
+        lifecycleScope.launch(Dispatchers.Default) { // (1)
+            runCatching { ApiServices().heatersApiService.delete(id).execute() } // (2)
+                .onSuccess {
+                    withContext(context = Dispatchers.Main) { // (3)
+                        Toast.makeText(
+                            applicationContext,
+                            "Success  deleting",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
+                }
+                .onFailure {
+                    withContext(context = Dispatchers.Main) { // (3)
+                        Toast.makeText(
+                            applicationContext,
+                            "id $id Error on windows deleting $it",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
+                }
+        }
+    }
 }

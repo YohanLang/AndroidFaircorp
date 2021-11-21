@@ -1,5 +1,5 @@
 package com.faircorp
 
 interface OnHeaterSelectedListener {
-    fun onHeaterSelected(id: Long)
+    fun onHeaterSelected(id: Long?)
 }

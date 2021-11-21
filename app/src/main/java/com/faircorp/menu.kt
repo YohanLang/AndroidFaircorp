@@ -6,13 +6,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import com.faircorp.databinding.ActivityMenuBinding
 
 open class BasicActivity : AppCompatActivity() {
 
@@ -41,6 +35,15 @@ open class BasicActivity : AppCompatActivity() {
             )
             R.id.menu_buildings -> startActivity(
                 Intent(this, BuildingsActivity::class.java)
+            )
+            R.id.menu_create_window -> startActivity(
+                Intent(this, WindowsCreateActivity::class.java)
+            )
+            R.id.menu_create_room -> startActivity(
+                Intent(this, RoomCreateActivity::class.java)
+            )
+            R.id.menu_create_heater -> startActivity(
+                Intent(this, HeatersCreateActivity::class.java)
             )
 
         }

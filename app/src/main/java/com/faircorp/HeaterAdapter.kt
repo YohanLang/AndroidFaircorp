@@ -5,7 +5,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-class HeaterAdapter(val listener: OnHeaterSelectedListener) : RecyclerView.Adapter<HeaterAdapter.HeaterViewHolder>() { // (1)
+
+class HeaterAdapter(val listener: OnHeaterSelectedListener) :
+    RecyclerView.Adapter<HeaterAdapter.HeaterViewHolder>() { // (1)
 
     inner class HeaterViewHolder(view: View) : RecyclerView.ViewHolder(view) { // (2)
         val name: TextView = view.findViewById(R.id.heater_name_item)

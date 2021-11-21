@@ -73,9 +73,23 @@
         android:id="@+id/button_delete_window"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:onClick="delete"
         android:text="Delete"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="528dp" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_window_status"
+        app:layout_constraintVertical_bias="0.501" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="switch"
+        android:text="Switch"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_delete_window"
+        app:layout_constraintTop_toBottomOf="@+id/txt_window_status" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

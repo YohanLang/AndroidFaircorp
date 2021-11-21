@@ -5,11 +5,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-class BuildingAdapter(val listener: OnBuildingSelectedListener) : RecyclerView.Adapter<BuildingAdapter.BuildingViewHolder>() { // (1)
+
+class BuildingAdapter(val listener: OnBuildingSelectedListener) :
+    RecyclerView.Adapter<BuildingAdapter.BuildingViewHolder>() { // (1)
 
     inner class BuildingViewHolder(view: View) : RecyclerView.ViewHolder(view) { // (2)
         val name: TextView = view.findViewById(R.id.building_name)
-
+        val outsideTemperature: TextView = view.findViewById(R.id.building_out)
     }
 
     private val items = mutableListOf<BuildingDto>() // (3)
@@ -33,7 +35,7 @@ class BuildingAdapter(val listener: OnBuildingSelectedListener) : RecyclerView.A
         val building = items[position]
         holder.apply {
             name.text = building.name
-
+            outsideTemperature.text = building.outsideTemperature.toString()
             itemView.setOnClickListener { listener.onBuildingSelected(building.id) } // (1)
         }
     }

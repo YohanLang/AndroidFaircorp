@@ -1,9 +1,7 @@
 package com.faircorp
 
 
-
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
@@ -14,8 +12,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class HeatersActivity  : BasicActivity(), OnHeaterSelectedListener {
-
+class HeatersActivity : BasicActivity(), OnHeaterSelectedListener {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,7 +47,7 @@ class HeatersActivity  : BasicActivity(), OnHeaterSelectedListener {
         }
     }
 
-    override fun onHeaterSelected(id: Long) {
+    override fun onHeaterSelected(id: Long?) {
 
         val intent = Intent(this, HeaterActivity::class.java).putExtra(Heater_NAME_PARAM2, id)
         startActivity(intent)

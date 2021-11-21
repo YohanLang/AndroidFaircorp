@@ -5,11 +5,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-class RoomAdapter(val listener: OnRoomSelectedListener) : RecyclerView.Adapter<RoomAdapter.RoomViewHolder>() { // (1)
+
+class RoomAdapter(val listener: OnRoomSelectedListener) :
+    RecyclerView.Adapter<RoomAdapter.RoomViewHolder>() { // (1)
 
     inner class RoomViewHolder(view: View) : RecyclerView.ViewHolder(view) { // (2)
         val name: TextView = view.findViewById(R.id.room_name)
         val currentemperature: TextView = view.findViewById((R.id.room_current_temperature))
+
         val building: TextView = view.findViewById(R.id.room_building_name)
     }
 
@@ -35,7 +38,7 @@ class RoomAdapter(val listener: OnRoomSelectedListener) : RecyclerView.Adapter<R
         holder.apply {
             name.text = room.name
             currentemperature.text = room.currentTemperature.toString()
-            building.text = room.buildingName
+            building.text = room.buildingId.toString()
             itemView.setOnClickListener { listener.onRoomSelected(room.id) } // (1)
         }
     }

@@ -1,5 +1,5 @@
 package com.faircorp
 
 interface OnRoomSelectedListener {
-    fun onRoomSelected(id: Long)
+    fun onRoomSelected(id: Long?)
 }

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/menu_email"
@@ -16,11 +15,20 @@
         android:title="@string/menu_windows"
         app:showAsAction="never" />
     <item
+        android:id="@+id/menu_create_window"
+        android:title="Create window" />
+    <item
         android:id="@+id/menu_heaters"
         android:title="@string/building_heaters" />
     <item
+        android:id="@+id/menu_create_heater"
+        android:title="Create heater" />
+    <item
         android:id="@+id/menu_rooms"
         android:title="Building Rooms" />
+    <item
+        android:id="@+id/menu_create_room"
+        android:title="Create Room" />
     <item
         android:id="@+id/menu_buildings"
         android:title="Buildings" />

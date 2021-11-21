@@ -1,7 +1,6 @@
 package com.faircorp
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
@@ -12,8 +11,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class BuildingsActivity  : BasicActivity(), OnBuildingSelectedListener {
-
+class BuildingsActivity : BasicActivity(), OnBuildingSelectedListener {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

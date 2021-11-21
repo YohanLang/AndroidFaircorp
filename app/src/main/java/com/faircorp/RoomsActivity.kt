@@ -1,9 +1,7 @@
 package com.faircorp
 
 
-
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
@@ -14,8 +12,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class RoomsActivity  : BasicActivity(), OnRoomSelectedListener {
-
+class RoomsActivity : BasicActivity(), OnRoomSelectedListener {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,7 +47,7 @@ class RoomsActivity  : BasicActivity(), OnRoomSelectedListener {
         }
     }
 
-    override fun onRoomSelected(id: Long) {
+    override fun onRoomSelected(id: Long?) {
 
         val intent = Intent(this, RoomActivity::class.java).putExtra(Room_NAME_PARAM2, id)
         startActivity(intent)
